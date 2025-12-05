@@ -28,3 +28,19 @@ guard let test = str else{
     print("There is no country");
     throw MyError()
 }
+
+//optional chaining
+struct grandChild {
+    var age = 10;    
+}
+
+struct Child {
+    var child : grandChild?    
+}
+
+struct me{
+    var child: Child?
+}
+
+let msg=me(child: Child(child: grandChild(age: 10)))
+print(msg.child?.child?.age)
